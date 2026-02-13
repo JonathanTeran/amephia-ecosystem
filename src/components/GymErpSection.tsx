@@ -16,7 +16,7 @@ const FeatureCard = ({
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    transition={{ delay, duration: 0.5 }}
+    transition={{ delay, duration: 0.45 }}
     className="group bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-primary/30 transition-all duration-300"
   >
     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
@@ -39,27 +39,9 @@ const InvoiceIcon = () => (
   </svg>
 );
 
-const AccountingIcon = () => (
-  <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-  </svg>
-);
-
 const InventoryIcon = () => (
   <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-  </svg>
-);
-
-const MemberIcon = () => (
-  <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-  </svg>
-);
-
-const ScheduleIcon = () => (
-  <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
   </svg>
 );
 
@@ -72,23 +54,16 @@ const AnalyticsIcon = () => (
 export const GymErpSection = () => {
   const { t } = useLanguage();
 
-  const mainFeatures = [
+  const gymFeatures = [
     { icon: <PosIcon />, titleKey: 'posTitle' as const, descKey: 'posDesc' as const },
     { icon: <InvoiceIcon />, titleKey: 'invoicingTitle' as const, descKey: 'invoicingDesc' as const },
-    { icon: <AccountingIcon />, titleKey: 'accountingTitle' as const, descKey: 'accountingDesc' as const },
     { icon: <InventoryIcon />, titleKey: 'inventoryTitle' as const, descKey: 'inventoryDesc' as const },
-  ];
-
-  const additionalFeatures = [
-    { icon: <MemberIcon />, titleKey: 'memberManagement' as const, descKey: 'memberManagementDesc' as const },
-    { icon: <ScheduleIcon />, titleKey: 'scheduling' as const, descKey: 'schedulingDesc' as const },
     { icon: <AnalyticsIcon />, titleKey: 'analytics' as const, descKey: 'analyticsDesc' as const },
   ];
 
   return (
-    <section className="py-24">
-      {/* Header */}
-      <div className="text-center mb-16">
+    <section className="py-20">
+      <div className="text-center mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -97,68 +72,37 @@ export const GymErpSection = () => {
           <span className="inline-block px-4 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs font-mono text-primary uppercase tracking-wider mb-4">
             {t('productSpotlight')}
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-primary mb-4 tracking-tighter">
+          <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-primary mb-4 tracking-tighter">
             {t('erpTitle')}
           </h2>
-          <p className="text-lg text-mutedText max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-mutedText max-w-3xl mx-auto">
             {t('erpSubtitle')}
           </p>
         </motion.div>
       </div>
 
-      {/* Description */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-3xl mx-auto text-center mb-16"
+        className="max-w-4xl mx-auto text-center mb-10"
       >
-        <p className="text-mutedText leading-relaxed text-lg">
-          {t('erpDesc')}
-        </p>
+        <p className="text-mutedText leading-relaxed">{t('erpDesc')}</p>
       </motion.div>
 
-      {/* Main Features Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        {mainFeatures.map((feature, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {gymFeatures.map((feature, index) => (
           <FeatureCard
             key={feature.titleKey}
             icon={feature.icon}
             title={t(feature.titleKey)}
             description={t(feature.descKey)}
-            delay={index * 0.1}
+            delay={index * 0.08}
           />
         ))}
       </div>
 
-      {/* Additional Features */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-        {additionalFeatures.map((feature, index) => (
-          <FeatureCard
-            key={feature.titleKey}
-            icon={feature.icon}
-            title={t(feature.titleKey)}
-            description={t(feature.descKey)}
-            delay={0.4 + index * 0.1}
-          />
-        ))}
-      </div>
-
-      {/* CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.5 }}
-        className="flex flex-col sm:flex-row items-center justify-center gap-4"
-      >
-        <button className="px-8 py-3 bg-primary text-background font-medium rounded-lg hover:bg-primary/90 transition-colors">
-          {t('requestDemo')}
-        </button>
-        <button className="px-8 py-3 border border-white/20 text-white font-medium rounded-lg hover:bg-white/5 transition-colors">
-          {t('learnMore')}
-        </button>
-      </motion.div>
+      <p className="mt-8 text-center text-sm text-mutedText/90">{t('erpScopeNote')}</p>
     </section>
   );
 };

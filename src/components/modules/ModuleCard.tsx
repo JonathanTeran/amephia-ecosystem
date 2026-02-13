@@ -8,16 +8,33 @@ interface ModuleCardProps {
     subtitle?: string; // Tagline or secondary info
     children?: React.ReactNode;
     delay?: number;
+    onClick?: () => void;
 }
 
-export const ModuleCard: React.FC<ModuleCardProps> = ({ className, title, subtitle, children, delay = 0 }) => {
+export const ModuleCard: React.FC<ModuleCardProps> = ({ className, title, subtitle, children, delay = 0, onClick }) => {
+    const isInteractive = typeof onClick === 'function';
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+        if (!isInteractive || !onClick) return;
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            onClick();
+        }
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+            onClick={onClick}
+            onKeyDown={handleKeyDown}
+            role={isInteractive ? 'button' : undefined}
+            tabIndex={isInteractive ? 0 : undefined}
+            aria-label={isInteractive ? `Open ${title} project` : undefined}
             className={twMerge(
                 "group relative bg-surface border border-white/5 hover:border-white/20 transition-colors duration-500 overflow-hidden flex flex-col justify-between p-8 min-h-[300px]",
+                isInteractive && "cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/40",
                 className
             )}
         >

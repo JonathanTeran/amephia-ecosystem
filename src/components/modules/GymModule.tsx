@@ -1,13 +1,19 @@
 import { ModuleCard } from './ModuleCard';
 import { motion } from 'framer-motion';
+import type { ProjectId } from '../../projects';
 
-export const GymModule = () => {
+interface GymModuleProps {
+    onOpenProject?: (projectId: ProjectId) => void;
+}
+
+export const GymModule = ({ onOpenProject }: GymModuleProps) => {
     return (
         <ModuleCard
-            title="GYM"
-            subtitle="Access Control / Biometrics"
+            title="ECOMMERCE"
+            subtitle="Online Store / Payments"
             className="col-span-1 md:col-span-4 md:row-span-2 bg-[#080808]"
             delay={0.1}
+            onClick={() => onOpenProject?.('ecommerce')}
         >
             <div className="relative w-48 h-48 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
                 {/* Outer Rings */}
@@ -26,7 +32,7 @@ export const GymModule = () => {
                         className="absolute w-full bg-primary/20 blur-sm"
                     />
                     <div className="w-full h-[1px] bg-primary absolute shadow-[0_0_10px_2px_rgba(59,130,246,0.5)] animate-[scan_2s_ease-in-out_infinite]"></div>
-                    <span className="font-mono text-[10px] text-primary tracking-widest">SCANNING</span>
+                    <span className="font-mono text-[10px] text-primary tracking-widest">CHECKOUT</span>
                 </div>
             </div>
         </ModuleCard>

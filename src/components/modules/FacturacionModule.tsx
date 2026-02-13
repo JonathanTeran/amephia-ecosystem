@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import { ModuleCard } from './ModuleCard';
+import type { ProjectId } from '../../projects';
 
-export const FacturacionModule = () => {
+interface FacturacionModuleProps {
+    onOpenProject?: (projectId: ProjectId) => void;
+}
+
+export const FacturacionModule = ({ onOpenProject }: FacturacionModuleProps) => {
     const [lines, setLines] = useState<string[]>([]);
 
     useEffect(() => {
@@ -27,6 +32,7 @@ export const FacturacionModule = () => {
             subtitle="SRI / Automated Compliance"
             className="col-span-1 md:col-span-8 overflow-hidden"
             delay={0.2}
+            onClick={() => onOpenProject?.('facturacion')}
         >
             <div className="w-full h-full flex items-center relative">
                 <div className="font-mono text-xs text-mutedText/30 space-y-2 w-full">

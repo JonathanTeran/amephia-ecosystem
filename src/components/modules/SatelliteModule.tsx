@@ -1,20 +1,23 @@
 import React from 'react';
 import { ModuleCard } from './ModuleCard';
 import { motion } from 'framer-motion';
+import type { ProjectId } from '../../projects';
 
 interface SatelliteModuleProps {
     title: string;
     type: 'pos' | 'nutri';
     delay?: number;
+    onOpenProject?: (projectId: ProjectId) => void;
 }
 
-export const SatelliteModule: React.FC<SatelliteModuleProps> = ({ title, type, delay = 0 }) => {
+export const SatelliteModule: React.FC<SatelliteModuleProps> = ({ title, type, delay = 0, onOpenProject }) => {
     return (
         <ModuleCard
             title={title}
             subtitle={type === 'pos' ? "Sales / Inventory" : "Meal Plans / Macros"}
             className="col-span-1 md:col-span-4 min-h-[250px]"
             delay={delay}
+            onClick={() => onOpenProject?.(type)}
         >
             <div className="w-full flex justify-center items-center">
                 {type === 'pos' ? (

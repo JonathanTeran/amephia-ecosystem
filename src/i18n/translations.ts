@@ -13,15 +13,20 @@ export const translations = {
     technologies: 'Technologies We Use',
 
     // ERP Section
-    productSpotlight: 'Featured Product',
+    productSpotlight: 'Fitness Product Spotlight',
     erpTitle: 'GYM ERP System',
-    erpSubtitle: 'One of our products: complete management solution for fitness centers',
-    erpDesc: 'Our Gym ERP is one of many products in our portfolio. It is designed specifically for gyms and fitness centers so you can manage all key operations from a single platform.',
+    erpSubtitle: 'Specialized platform for fitness centers and gyms',
+    erpDesc: 'Our Gym ERP is one of many products in our portfolio. It helps fitness businesses centralize operations, billing, and control in one system.',
+    erpScopeNote: 'This is one specialized vertical. We also build Ecommerce, mobile apps, and advisory-driven custom solutions.',
 
     // Products & Services
     productsBadge: 'Products & Services',
     productsTitle: 'More Solutions for Your Business',
-    productsSubtitle: 'In addition to our Gym ERP, we offer Ecommerce platforms with online payments and professional advisory services.',
+    productsSubtitle: 'Our portfolio includes digital products and services for multiple industries and business models.',
+    packageBadge: 'Open Source Package',
+    packageTitle: 'amephia/sri-ec',
+    packageDesc: 'Laravel package for SRI electronic invoicing in Ecuador, ready to speed up integrations and compliance workflows.',
+    packageCta: 'View on Packagist',
 
     // ERP Features
     posTitle: 'Point of Sale',
@@ -46,6 +51,8 @@ export const translations = {
     analytics: 'Analytics & Reports',
     analyticsDesc: 'Real-time dashboards, KPIs, revenue reports, and member analytics to make data-driven decisions.',
 
+    gymProductTitle: 'Gym ERP',
+    gymProductDesc: 'Complete software platform for gym and fitness operations, from sales to member management.',
     ecommerceTitle: 'Ecommerce & Online Payments',
     ecommerceDesc: 'Sell products and services online with a secure checkout, payment gateway integrations, and real-time order tracking.',
     advisoryTitle: 'Business Advisory',
@@ -77,8 +84,8 @@ export const translations = {
     // Stats Section
     statsTitle: 'Numbers That Speak',
     statsSubtitle: 'Trusted by businesses across Latin America and by clients in the U.S., with solutions for any industry',
-    statsGyms: 'Active Gyms',
-    statsMembers: 'Members Managed',
+    statsGyms: 'Active Businesses',
+    statsMembers: 'Users Managed',
     statsTransactions: 'Monthly Transactions',
     statsUptime: 'Uptime',
     statsCountries: 'Countries',
@@ -120,15 +127,20 @@ export const translations = {
     technologies: 'Tecnologías que Utilizamos',
 
     // ERP Section
-    productSpotlight: 'Producto Destacado',
+    productSpotlight: 'Producto Fitness Destacado',
     erpTitle: 'Sistema ERP para Gimnasios',
-    erpSubtitle: 'Uno de nuestros productos: solución completa de gestión para centros fitness',
-    erpDesc: 'Nuestro ERP para gimnasios es uno de varios productos de nuestro portafolio. Está diseñado específicamente para gimnasios y centros fitness, para gestionar toda la operación desde una sola plataforma.',
+    erpSubtitle: 'Plataforma especializada para centros fitness y gimnasios',
+    erpDesc: 'Nuestro ERP para gimnasios es uno de varios productos de nuestro portafolio. Ayuda a centralizar operación, facturación y control en un solo sistema.',
+    erpScopeNote: 'Este es un vertical especializado. También desarrollamos Ecommerce, apps móviles y soluciones a medida con asesoría.',
 
     // Productos y Servicios
     productsBadge: 'Productos y Servicios',
     productsTitle: 'Más Soluciones para tu Negocio',
-    productsSubtitle: 'Además de nuestro ERP para gimnasios, ofrecemos plataformas de Ecommerce con pagos online y servicios profesionales de asesoría.',
+    productsSubtitle: 'Nuestro portafolio incluye productos y servicios digitales para múltiples industrias y modelos de negocio.',
+    packageBadge: 'Paquete Open Source',
+    packageTitle: 'amephia/sri-ec',
+    packageDesc: 'Paquete para Laravel de facturación electrónica con SRI (Ecuador), listo para acelerar integraciones y flujos de cumplimiento.',
+    packageCta: 'Ver en Packagist',
 
     // ERP Features
     posTitle: 'Punto de Venta',
@@ -153,6 +165,8 @@ export const translations = {
     analytics: 'Análisis y Reportes',
     analyticsDesc: 'Dashboards en tiempo real, KPIs, reportes de ingresos y análisis de miembros para tomar decisiones basadas en datos.',
 
+    gymProductTitle: 'ERP para Gimnasios',
+    gymProductDesc: 'Plataforma integral para la operación de gimnasios y centros fitness, desde ventas hasta gestión de miembros.',
     ecommerceTitle: 'Ecommerce y Pagos Online',
     ecommerceDesc: 'Vende productos y servicios en línea con checkout seguro, integraciones de pasarelas de pago y seguimiento de pedidos en tiempo real.',
     advisoryTitle: 'Servicios de Asesoría',
@@ -184,8 +198,8 @@ export const translations = {
     // Stats Section
     statsTitle: 'Números que Hablan',
     statsSubtitle: 'La confianza de negocios en toda Latinoamérica y de clientes en EE. UU., con soluciones para cualquier industria',
-    statsGyms: 'Gimnasios Activos',
-    statsMembers: 'Miembros Gestionados',
+    statsGyms: 'Negocios Activos',
+    statsMembers: 'Usuarios Gestionados',
     statsTransactions: 'Transacciones Mensuales',
     statsUptime: 'Disponibilidad',
     statsCountries: 'Países',
