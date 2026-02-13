@@ -18,6 +18,11 @@ export const translations = {
     erpSubtitle: 'One of our products: complete management solution for fitness centers',
     erpDesc: 'Our Gym ERP is one of many products in our portfolio. It is designed specifically for gyms and fitness centers so you can manage all key operations from a single platform.',
 
+    // Products & Services
+    productsBadge: 'Products & Services',
+    productsTitle: 'More Solutions for Your Business',
+    productsSubtitle: 'In addition to our Gym ERP, we offer Ecommerce platforms with online payments and professional advisory services.',
+
     // ERP Features
     posTitle: 'Point of Sale',
     posDesc: 'Fast and intuitive POS system for selling memberships, products, and services. Accept multiple payment methods and manage transactions seamlessly.',
@@ -43,6 +48,8 @@ export const translations = {
 
     ecommerceTitle: 'Ecommerce & Online Payments',
     ecommerceDesc: 'Sell products and services online with a secure checkout, payment gateway integrations, and real-time order tracking.',
+    advisoryTitle: 'Business Advisory',
+    advisoryDesc: 'We support startups and companies with technical advisory, software architecture, process optimization, and implementation roadmaps.',
 
     // CTA
     learnMore: 'Learn More',
@@ -52,7 +59,7 @@ export const translations = {
     // Contact Section
     contactTitle: 'Get In Touch',
     contactSubtitle: 'Ready to transform your business? Contact us today',
-    contactDesc: 'Our team is ready to help you implement the perfect solution for your gym or fitness center. Get in touch with us through any of the following channels.',
+    contactDesc: 'Our team is ready to help you implement the right solution for your business. Get in touch with us through any of the following channels.',
     contactName: 'Full Name',
     contactEmail: 'Email Address',
     contactPhone: 'Phone Number',
@@ -118,6 +125,11 @@ export const translations = {
     erpSubtitle: 'Uno de nuestros productos: solución completa de gestión para centros fitness',
     erpDesc: 'Nuestro ERP para gimnasios es uno de varios productos de nuestro portafolio. Está diseñado específicamente para gimnasios y centros fitness, para gestionar toda la operación desde una sola plataforma.',
 
+    // Productos y Servicios
+    productsBadge: 'Productos y Servicios',
+    productsTitle: 'Más Soluciones para tu Negocio',
+    productsSubtitle: 'Además de nuestro ERP para gimnasios, ofrecemos plataformas de Ecommerce con pagos online y servicios profesionales de asesoría.',
+
     // ERP Features
     posTitle: 'Punto de Venta',
     posDesc: 'Sistema POS rápido e intuitivo para vender membresías, productos y servicios. Acepta múltiples métodos de pago y gestiona transacciones sin problemas.',
@@ -143,6 +155,8 @@ export const translations = {
 
     ecommerceTitle: 'Ecommerce y Pagos Online',
     ecommerceDesc: 'Vende productos y servicios en línea con checkout seguro, integraciones de pasarelas de pago y seguimiento de pedidos en tiempo real.',
+    advisoryTitle: 'Servicios de Asesoría',
+    advisoryDesc: 'Acompañamos a startups y empresas con asesoría técnica, arquitectura de software, optimización de procesos y hojas de ruta de implementación.',
 
     // CTA
     learnMore: 'Más Información',
@@ -152,7 +166,7 @@ export const translations = {
     // Contact Section
     contactTitle: 'Contáctanos',
     contactSubtitle: '¿Listo para transformar tu negocio? Contáctanos hoy',
-    contactDesc: 'Nuestro equipo está listo para ayudarte a implementar la solución perfecta para tu gimnasio o centro fitness. Comunícate con nosotros a través de cualquiera de los siguientes canales.',
+    contactDesc: 'Nuestro equipo está listo para ayudarte a implementar la solución ideal para tu negocio. Comunícate con nosotros a través de cualquiera de los siguientes canales.',
     contactName: 'Nombre Completo',
     contactEmail: 'Correo Electrónico',
     contactPhone: 'Número de Teléfono',

@@ -7,6 +7,7 @@ import { SatelliteModule } from './components/modules/SatelliteModule';
 
 import { InfoSection } from './components/InfoSection';
 import { GymErpSection } from './components/GymErpSection';
+import { ProductsSection } from './components/ProductsSection';
 import { StatsSection } from './components/StatsSection';
 import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
@@ -21,6 +22,8 @@ function App() {
         <SatelliteModule title="POS" type="pos" delay={0.3} />
         <SatelliteModule title="NUTRI" type="nutri" delay={0.4} />
       </BentoGrid>
+
+      <ProductsSection />
 
       <GymErpSection />
 
