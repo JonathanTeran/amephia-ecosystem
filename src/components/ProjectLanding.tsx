@@ -258,16 +258,36 @@ export const ProjectLanding = ({ projectId, onBack }: ProjectLandingProps) => {
   const { language } = useLanguage();
   const copy = PROJECT_COPY[language][projectId];
   const whatsappNumber = '593986059727';
+  const packagistUrl = 'https://packagist.org/packages/amephia/sri-ec';
+  const contactEmail = 'info@amephia.com';
   const introMessage =
     language === 'es'
       ? `Hola, quiero información del proyecto ${copy.title}.`
       : `Hi, I want more information about the ${copy.title} project.`;
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(introMessage)}`;
+  const emailSubject =
+    language === 'es'
+      ? `Agenda de proyecto: ${copy.title}`
+      : `Project consultation: ${copy.title}`;
+  const emailUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(emailSubject)}`;
+  const secondaryUrl = projectId === 'facturacion' ? packagistUrl : emailUrl;
+  const secondaryLabel =
+    projectId === 'facturacion'
+      ? language === 'es'
+        ? 'Ver Paquete en Packagist'
+        : 'View Package on Packagist'
+      : language === 'es'
+        ? 'Agendar Asesoría'
+        : 'Book Advisory Call';
   const backLabel = language === 'es' ? 'Volver al Portafolio' : 'Back to Portfolio';
-  const ctaLabel = language === 'es' ? 'Solicitar Este Proyecto' : 'Request This Project';
+  const ctaLabel = language === 'es' ? 'Solicitar este Proyecto' : 'Request this Project';
+  const responseNote =
+    language === 'es'
+      ? 'Respuesta por WhatsApp en minutos.'
+      : 'WhatsApp response in minutes.';
 
   return (
-    <section className="py-16">
+    <section className="py-16 pb-28 md:pb-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -324,14 +344,36 @@ export const ProjectLanding = ({ projectId, onBack }: ProjectLandingProps) => {
         </motion.div>
       </div>
 
-      <a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex px-6 py-3 bg-primary text-background font-semibold rounded-lg hover:bg-primary/90 transition-colors"
-      >
-        {ctaLabel}
-      </a>
+      <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center px-6 py-3 bg-primary text-background font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+        >
+          {ctaLabel}
+        </a>
+        <a
+          href={secondaryUrl}
+          target={projectId === 'facturacion' ? '_blank' : undefined}
+          rel={projectId === 'facturacion' ? 'noreferrer' : undefined}
+          className="inline-flex items-center justify-center px-6 py-3 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 transition-colors"
+        >
+          {secondaryLabel}
+        </a>
+        <span className="text-sm text-mutedText">{responseNote}</span>
+      </div>
+
+      <div className="md:hidden fixed bottom-4 inset-x-4 z-40">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="w-full inline-flex items-center justify-center px-6 py-3 bg-primary text-background font-semibold rounded-xl shadow-[0_8px_24px_rgba(143,168,118,0.35)]"
+        >
+          {ctaLabel}
+        </a>
+      </div>
     </section>
   );
 };

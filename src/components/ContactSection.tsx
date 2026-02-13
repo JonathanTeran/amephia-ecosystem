@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n';
 
 const WHATSAPP_NUMBER = '593986059727';
+const CONTACT_EMAIL = 'info@amephia.com';
+const FORM_SUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
 const WhatsAppIcon = () => (
   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -44,22 +46,55 @@ export const ContactSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setIsSuccess(false);
+    setSubmitError(null);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || 'N/A',
+        message: formData.message,
+        _subject: `Nuevo contacto web - ${formData.name}`,
+        _template: 'table',
+        _captcha: 'false',
+        _replyto: formData.email,
+      };
 
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    setFormData({ name: '', email: '', phone: '', message: '' });
+      const response = await fetch(FORM_SUBMIT_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
 
-    setTimeout(() => setIsSuccess(false), 3000);
+      const result = await response.json().catch(() => null);
+      const requestFailed =
+        !response.ok || result?.success === false || result?.success === 'false';
+
+      if (requestFailed) {
+        throw new Error('contact submit failed');
+      }
+
+      setIsSuccess(true);
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      setTimeout(() => setIsSuccess(false), 3500);
+    } catch {
+      setSubmitError(t('contactError'));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (submitError) setSubmitError(null);
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
@@ -67,7 +102,7 @@ export const ContactSection = () => {
   };
 
   const openWhatsApp = () => {
-    const message = encodeURIComponent('Hola! Me interesa obtener más información sobre el sistema ERP para gimnasios.');
+    const message = encodeURIComponent('Hola! Me interesa obtener más información sobre sus soluciones de software.');
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
   };
 
@@ -276,6 +311,31 @@ export const ContactSection = () => {
                 className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-center"
               >
                 {t('contactSuccess')}
+              </motion.div>
+            )}
+
+            {submitError && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-300 text-sm text-center"
+              >
+                <p className="mb-3">{submitError}</p>
+                <div className="flex items-center justify-center gap-3">
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="px-4 py-2 border border-white/20 rounded-lg hover:bg-white/5 transition-colors"
+                  >
+                    {t('contactEmailNow')}
+                  </a>
+                  <button
+                    type="button"
+                    onClick={openWhatsApp}
+                    className="px-4 py-2 border border-green-500/40 text-green-300 rounded-lg hover:bg-green-500/10 transition-colors"
+                  >
+                    WhatsApp
+                  </button>
+                </div>
               </motion.div>
             )}
           </form>

@@ -6,7 +6,7 @@ const technologies = {
   Backend: ['Laravel', 'Node.js', 'Express', 'NestJS', 'Python', 'N8N', 'REST APIs'],
   Mobile: ['Flutter', 'React Native', 'Android (Kotlin)', 'iOS (Swift)'],
   Database: ['MySQL', 'SQL Server', 'PostgreSQL', 'MongoDB', 'Redis'],
-  Cloud: ['Docker', 'GitHub Actions', 'Linux', 'Nginx', 'AWS', 'Google Cloud'],
+  Cloud: ['Docker', 'GitHub Actions', 'Linux', 'Nginx', 'AWS', 'Google Cloud', 'DigitalOcean', 'Hostinger'],
   AI: ['OpenAI', 'Claude', 'Gemini', 'LangChain', 'RAG Systems'],
 };
 

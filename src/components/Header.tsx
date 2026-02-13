@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n';
 
-import logo from '../assets/images/amelogo_v3.png';
+import logo from '../assets/images/amelogo_v3_optimized.webp';
 
 const LanguageSelector: React.FC = () => {
     const { language, setLanguage } = useLanguage();
@@ -64,6 +64,10 @@ export const Header: React.FC = () => {
                     <img
                         src={logo}
                         alt="AmePhia Logo"
+                        width={900}
+                        height={312}
+                        decoding="async"
+                        fetchPriority="high"
                         className="w-40 h-auto object-contain mb-8 opacity-90"
                     />
                     <h1 className="text-7xl md:text-9xl font-bold leading-[0.8] tracking-tighter text-white/90">
