@@ -13,9 +13,10 @@ export const translations = {
     technologies: 'Technologies We Use',
 
     // ERP Section
+    productSpotlight: 'Featured Product',
     erpTitle: 'GYM ERP System',
-    erpSubtitle: 'Complete management solution for fitness centers',
-    erpDesc: 'Our comprehensive ERP solution designed specifically for gyms and fitness centers. Manage all aspects of your business from a single, powerful platform.',
+    erpSubtitle: 'One of our products: complete management solution for fitness centers',
+    erpDesc: 'Our Gym ERP is one of many products in our portfolio. It is designed specifically for gyms and fitness centers so you can manage all key operations from a single platform.',
 
     // ERP Features
     posTitle: 'Point of Sale',
@@ -39,6 +40,9 @@ export const translations = {
 
     analytics: 'Analytics & Reports',
     analyticsDesc: 'Real-time dashboards, KPIs, revenue reports, and member analytics to make data-driven decisions.',
+
+    ecommerceTitle: 'Ecommerce & Online Payments',
+    ecommerceDesc: 'Sell products and services online with a secure checkout, payment gateway integrations, and real-time order tracking.',
 
     // CTA
     learnMore: 'Learn More',
@@ -109,9 +113,10 @@ export const translations = {
     technologies: 'Tecnologías que Utilizamos',
 
     // ERP Section
+    productSpotlight: 'Producto Destacado',
     erpTitle: 'Sistema ERP para Gimnasios',
-    erpSubtitle: 'Solución completa de gestión para centros fitness',
-    erpDesc: 'Nuestra solución ERP integral diseñada específicamente para gimnasios y centros fitness. Administra todos los aspectos de tu negocio desde una única y potente plataforma.',
+    erpSubtitle: 'Uno de nuestros productos: solución completa de gestión para centros fitness',
+    erpDesc: 'Nuestro ERP para gimnasios es uno de varios productos de nuestro portafolio. Está diseñado específicamente para gimnasios y centros fitness, para gestionar toda la operación desde una sola plataforma.',
 
     // ERP Features
     posTitle: 'Punto de Venta',
@@ -135,6 +140,9 @@ export const translations = {
 
     analytics: 'Análisis y Reportes',
     analyticsDesc: 'Dashboards en tiempo real, KPIs, reportes de ingresos y análisis de miembros para tomar decisiones basadas en datos.',
+
+    ecommerceTitle: 'Ecommerce y Pagos Online',
+    ecommerceDesc: 'Vende productos y servicios en línea con checkout seguro, integraciones de pasarelas de pago y seguimiento de pedidos en tiempo real.',
 
     // CTA
     learnMore: 'Más Información',

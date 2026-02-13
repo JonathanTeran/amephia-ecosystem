@@ -95,7 +95,7 @@ export const GymErpSection = () => {
           viewport={{ once: true }}
         >
           <span className="inline-block px-4 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs font-mono text-primary uppercase tracking-wider mb-4">
-            ERP Solution
+            {t('productSpotlight')}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-primary mb-4 tracking-tighter">
             {t('erpTitle')}
