@@ -47,66 +47,67 @@ export const Header: React.FC = () => {
     }, []);
 
     return (
-        <header className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-32 items-start">
-            {/* Left: Manifesto */}
-            <div className="col-span-1 md:col-span-5 flex flex-col justify-start relative">
+        <header className="flex flex-col items-center justify-center mb-32 relative">
+            {/* Language Selector - Absolute Top Right */}
+            <div className="absolute top-0 right-0">
+                <LanguageSelector />
+            </div>
+
+            {/* Main Content: Logo & Title */}
+            <div className="flex flex-col items-center text-center z-10 mt-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col items-center"
                 >
                     <img
                         src={logo}
                         alt="AmePhia Logo"
-                        className="w-32 h-auto object-contain mb-6 opacity-90"
+                        className="w-40 h-auto object-contain mb-8 opacity-90"
                     />
-                    <h1 className="text-7xl md:text-9xl font-bold leading-[0.8] tracking-tighter text-white">
+                    <h1 className="text-7xl md:text-9xl font-bold leading-[0.8] tracking-tighter text-white/90">
                         ECOSYSTEM <br />
                         <span className="text-white/20">AMEPHIA</span>
                     </h1>
                 </motion.div>
-                <div className="mt-8 flex items-center space-x-4">
-                    <div className="h-[1px] w-12 bg-white/20"></div>
+
+                <div className="mt-8 flex flex-col items-center gap-4">
+                    <div className="h-[1px] w-24 bg-white/20"></div>
                     <span className="font-mono text-xs text-mutedText uppercase tracking-widest">v2.4.0-stable</span>
                 </div>
-            </div>
 
-            {/* Right: CLI Interface / Data Flow */}
-            <div className="col-span-1 md:col-span-7 flex flex-col items-start md:items-end pt-2">
-                <div className="flex items-center justify-between w-full md:justify-end gap-6 mb-4">
-                    <LanguageSelector />
-                </div>
-                <div className="text-left md:text-right mb-8">
+                <div className="mt-8 max-w-2xl mx-auto">
                     <p className="font-mono text-sm text-mutedText/80 uppercase tracking-widest leading-relaxed">
-                        {t('tagline').split(' ').slice(0, 3).join(' ')} <br /> {t('tagline').split(' ').slice(3).join(' ')}
+                        {t('tagline')}
                     </p>
                 </div>
-
-                {/* Abstract CLI Visualization */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="w-full max-w-lg bg-surface/30 border border-white/5 p-6 backdrop-blur-sm relative overflow-hidden group"
-                >
-                    <div className="absolute top-0 right-0 p-2 opacity-50">
-                        <div className="w-2 h-2 bg-primary animate-pulse rounded-full"></div>
-                    </div>
-                    <div className="font-mono text-[10px] md:text-xs text-primary/70 space-y-1">
-                        <p>{'>'} init_sequence --force</p>
-                        <p>{'>'} loading_modules: <span className="text-white">[GYM, FACT, POS, NUTRI]</span></p>
-                        <p>{'>'} verifying_integrity... <span className="text-green-500">OK</span></p>
-                        <div className="h-[1px] w-full bg-white/5 my-2"></div>
-                        <div className="flex justify-between text-mutedText">
-                            <span>MEM: 402MB</span>
-                            <span>CPU: 12%</span>
-                            <span>T: {currentTime}</span>
-                        </div>
-                    </div>
-                    {/* Scanline */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent h-[20%] w-full animate-[scan_4s_linear_infinite] pointer-events-none"></div>
-                </motion.div>
             </div>
+
+            {/* CLI Visualization (Optional/Centered) */}
+            <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="mt-16 w-full max-w-lg bg-surface/30 border border-white/5 p-6 backdrop-blur-sm relative overflow-hidden group rounded-xl"
+            >
+                <div className="absolute top-0 right-0 p-2 opacity-50">
+                    <div className="w-2 h-2 bg-primary animate-pulse rounded-full"></div>
+                </div>
+                <div className="font-mono text-[10px] md:text-xs text-primary/70 space-y-1 text-left">
+                    <p>{'>'} init_sequence --force</p>
+                    <p>{'>'} loading_modules: <span className="text-white">[GYM, FACT, POS, NUTRI]</span></p>
+                    <p>{'>'} verifying_integrity... <span className="text-green-500">OK</span></p>
+                    <div className="h-[1px] w-full bg-white/5 my-2"></div>
+                    <div className="flex justify-between text-mutedText">
+                        <span>MEM: 402MB</span>
+                        <span>CPU: 12%</span>
+                        <span>T: {currentTime}</span>
+                    </div>
+                </div>
+                {/* Scanline */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent h-[20%] w-full animate-[scan_4s_linear_infinite] pointer-events-none"></div>
+            </motion.div>
         </header>
     );
 };
