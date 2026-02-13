@@ -36,7 +36,7 @@ const PROJECT_META: Record<ProjectId, { title: string; description: string }> = 
   pos: {
     title: 'POS y Operación Comercial',
     description:
-      'Sistema punto de venta para operaciones comerciales con control de inventario, caja y reportes en tiempo real.',
+      'POS rápido para ventas de mostrador con devoluciones, facturación instantánea y soporte para lectores de códigos e impresoras térmicas.',
   },
   nutri: {
     title: 'App de Nutrición y Seguimiento',
