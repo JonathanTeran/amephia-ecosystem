@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Icon Preview</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .icon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            border: 1px solid #333;
+        }
+
+        .transparent-bg {
+            background-image: conic-gradient(#333 0.25turn, #222 0.25turn 0.5turn, #333 0.5turn 0.75turn, #222 0.75turn);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>App Icon Variants</h1>
+    <div class="icon-grid">
+        <div class="icon-container">
+            <img src="/src/assets/images/icons/app_icon_transparent.png" class="transparent-bg" alt="Transparent">
+            <span>Transparent</span>
+        </div>
+        <div class="icon-container">
+            <img src="/src/assets/images/icons/app_icon_dark.png" alt="Dark">
+            <span>Dark</span>
+        </div>
+        <div class="icon-container">
+            <img src="/src/assets/images/icons/app_icon_teal.png" alt="Teal">
+            <span>Teal</span>
+        </div>
+    </div>
+</body>
+
+</html>

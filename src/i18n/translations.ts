@@ -62,6 +62,38 @@ export const translations = {
     contactEmailPlaceholder: 'john@example.com',
     contactPhonePlaceholder: '+1 234 567 8900',
     contactMessagePlaceholder: 'Tell us about your project or ask any questions...',
+
+    // Stats Section
+    statsTitle: 'Numbers That Speak',
+    statsSubtitle: 'Trusted by fitness businesses across Latin America',
+    statsGyms: 'Active Gyms',
+    statsMembers: 'Members Managed',
+    statsTransactions: 'Monthly Transactions',
+    statsUptime: 'Uptime',
+    statsCountries: 'Countries',
+    statsSupport: 'Support Response',
+
+    // FAQ Section
+    faqTitle: 'Frequently Asked Questions',
+    faqSubtitle: 'Everything you need to know about our platform',
+
+    faq1Question: 'What is AmePhia Ecosystem?',
+    faq1Answer: 'AmePhia Ecosystem is a comprehensive ERP solution designed specifically for gyms and fitness centers. It includes point of sale (POS), electronic invoicing, accounting, inventory management, member management, class scheduling, and analytics - all in one integrated platform.',
+
+    faq2Question: 'Is the electronic invoicing compliant with local regulations?',
+    faq2Answer: 'Yes, our electronic invoicing module is fully compliant with SRI (Ecuador) regulations. We automatically handle tax calculations, document validation, and submission to tax authorities. We also support regulations from other Latin American countries.',
+
+    faq3Question: 'Can I migrate my existing data to AmePhia?',
+    faq3Answer: 'Absolutely! We offer a complete data migration service. Our team will help you import your existing member database, historical transactions, and product catalogs. The migration process is handled carefully to ensure no data loss.',
+
+    faq4Question: 'What kind of support do you offer?',
+    faq4Answer: 'We provide multiple support channels: WhatsApp support with response times under 5 minutes during business hours, email support, comprehensive documentation, and video tutorials. Enterprise clients also get access to dedicated account managers.',
+
+    faq5Question: 'Is my data secure?',
+    faq5Answer: 'Security is our top priority. We use industry-standard encryption (AES-256) for data at rest and in transit. Our infrastructure is hosted on secure cloud servers with automatic backups, and we comply with international data protection standards.',
+
+    faq6Question: 'Can I try the system before purchasing?',
+    faq6Answer: 'Yes! We offer a free demo where you can explore all features of the platform. Contact us via WhatsApp or fill out the contact form to schedule your personalized demo.',
   },
   es: {
     // Header
@@ -126,6 +158,38 @@ export const translations = {
     contactEmailPlaceholder: 'juan@ejemplo.com',
     contactPhonePlaceholder: '+593 99 123 4567',
     contactMessagePlaceholder: 'Cuéntanos sobre tu proyecto o haz cualquier pregunta...',
+
+    // Stats Section
+    statsTitle: 'Números que Hablan',
+    statsSubtitle: 'La confianza de negocios fitness en toda Latinoamérica',
+    statsGyms: 'Gimnasios Activos',
+    statsMembers: 'Miembros Gestionados',
+    statsTransactions: 'Transacciones Mensuales',
+    statsUptime: 'Disponibilidad',
+    statsCountries: 'Países',
+    statsSupport: 'Respuesta de Soporte',
+
+    // FAQ Section
+    faqTitle: 'Preguntas Frecuentes',
+    faqSubtitle: 'Todo lo que necesitas saber sobre nuestra plataforma',
+
+    faq1Question: '¿Qué es AmePhia Ecosystem?',
+    faq1Answer: 'AmePhia Ecosystem es una solución ERP integral diseñada específicamente para gimnasios y centros fitness. Incluye punto de venta (POS), facturación electrónica, contabilidad, gestión de inventarios, gestión de miembros, programación de clases y análisis - todo en una plataforma integrada.',
+
+    faq2Question: '¿La facturación electrónica cumple con las regulaciones locales?',
+    faq2Answer: 'Sí, nuestro módulo de facturación electrónica cumple completamente con las regulaciones del SRI (Ecuador). Manejamos automáticamente los cálculos de impuestos, validación de documentos y envío a las autoridades fiscales. También soportamos regulaciones de otros países latinoamericanos.',
+
+    faq3Question: '¿Puedo migrar mis datos existentes a AmePhia?',
+    faq3Answer: '¡Por supuesto! Ofrecemos un servicio completo de migración de datos. Nuestro equipo te ayudará a importar tu base de datos de miembros existente, transacciones históricas y catálogos de productos. El proceso de migración se maneja cuidadosamente para asegurar que no haya pérdida de datos.',
+
+    faq4Question: '¿Qué tipo de soporte ofrecen?',
+    faq4Answer: 'Proporcionamos múltiples canales de soporte: soporte por WhatsApp con tiempos de respuesta menores a 5 minutos durante horario laboral, soporte por email, documentación completa y tutoriales en video. Los clientes empresariales también tienen acceso a gerentes de cuenta dedicados.',
+
+    faq5Question: '¿Mis datos están seguros?',
+    faq5Answer: 'La seguridad es nuestra máxima prioridad. Usamos encriptación estándar de la industria (AES-256) para datos en reposo y en tránsito. Nuestra infraestructura está alojada en servidores cloud seguros con respaldos automáticos, y cumplimos con estándares internacionales de protección de datos.',
+
+    faq6Question: '¿Puedo probar el sistema antes de comprarlo?',
+    faq6Answer: '¡Sí! Ofrecemos una demo gratuita donde puedes explorar todas las funciones de la plataforma. Contáctanos por WhatsApp o completa el formulario de contacto para programar tu demo personalizada.',
   }
 } as const;
 
