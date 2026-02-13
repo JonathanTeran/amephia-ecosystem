@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n';
 import type { Language } from '../i18n';
 import type { ProjectId } from '../projects';
+import { trackContactClick, trackEvent, trackLeadGenerated } from '../lib/analytics';
 
 interface ProjectLandingProps {
   projectId: ProjectId;
@@ -285,6 +286,21 @@ export const ProjectLanding = ({ projectId, onBack }: ProjectLandingProps) => {
     language === 'es'
       ? 'Respuesta por WhatsApp en minutos.'
       : 'WhatsApp response in minutes.';
+  const handlePrimaryCtaClick = () => {
+    const context = `project_${projectId}_primary`;
+    trackEvent('project_cta_click', { project_id: projectId, cta: 'whatsapp' });
+    trackContactClick('whatsapp', context);
+    trackLeadGenerated('whatsapp', context);
+  };
+  const handleSecondaryCtaClick = () => {
+    const ctaType = projectId === 'facturacion' ? 'packagist' : 'email';
+    trackEvent('project_cta_click', { project_id: projectId, cta: ctaType });
+    if (ctaType === 'email') {
+      const context = `project_${projectId}_secondary`;
+      trackContactClick('email', context);
+      trackLeadGenerated('email', context);
+    }
+  };
 
   return (
     <section className="py-16 pb-28 md:pb-16">
@@ -349,6 +365,7 @@ export const ProjectLanding = ({ projectId, onBack }: ProjectLandingProps) => {
           href={whatsappUrl}
           target="_blank"
           rel="noreferrer"
+          onClick={handlePrimaryCtaClick}
           className="inline-flex items-center justify-center px-6 py-3 bg-primary text-background font-semibold rounded-lg hover:bg-primary/90 transition-colors"
         >
           {ctaLabel}
@@ -357,6 +374,7 @@ export const ProjectLanding = ({ projectId, onBack }: ProjectLandingProps) => {
           href={secondaryUrl}
           target={projectId === 'facturacion' ? '_blank' : undefined}
           rel={projectId === 'facturacion' ? 'noreferrer' : undefined}
+          onClick={handleSecondaryCtaClick}
           className="inline-flex items-center justify-center px-6 py-3 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 transition-colors"
         >
           {secondaryLabel}
@@ -369,6 +387,7 @@ export const ProjectLanding = ({ projectId, onBack }: ProjectLandingProps) => {
           href={whatsappUrl}
           target="_blank"
           rel="noreferrer"
+          onClick={handlePrimaryCtaClick}
           className="w-full inline-flex items-center justify-center px-6 py-3 bg-primary text-background font-semibold rounded-xl shadow-[0_8px_24px_rgba(143,168,118,0.35)]"
         >
           {ctaLabel}

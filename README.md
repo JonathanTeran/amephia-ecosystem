@@ -1,3 +1,22 @@
+# AmePhia Ecosystem
+
+## Analytics (GA4)
+
+1. Crea el archivo `.env` basado en `.env.example`.
+2. Define tu measurement ID de GA4:
+   `VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX`
+3. En GitHub (repo), agrega `Settings -> Secrets and variables -> Actions -> Variables`:
+   `VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX`
+4. Ejecuta build/deploy.
+5. En GA4, marca como conversiones estos eventos:
+   `generate_lead`, `contact_click`, `project_cta_click`.
+
+El sitio ya envía automáticamente:
+- `page_view` en home y landings de proyecto.
+- `generate_lead` al enviar formulario y al hacer clic en WhatsApp/correo.
+- `contact_click` para clics de contacto.
+- `project_cta_click` en CTAs de cada landing.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

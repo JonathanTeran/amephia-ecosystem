@@ -16,6 +16,7 @@ import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
 import { isProjectId } from './projects';
 import type { ProjectId } from './projects';
+import { trackEvent, trackPageView } from './lib/analytics';
 
 const BASE_TITLE = 'AmePhia Systems | Empresa de Desarrollo de Software';
 const BASE_DESCRIPTION =
@@ -126,6 +127,9 @@ function App() {
 
     const canonicalLink = document.querySelector('link[rel="canonical"]');
     if (canonicalLink) canonicalLink.setAttribute('href', nextCanonical);
+
+    const currentPath = `${window.location.pathname}${window.location.search}`;
+    trackPageView(currentPath, nextTitle);
   }, [activeProject]);
 
   const openProject = useCallback((projectId: ProjectId) => {
@@ -133,6 +137,7 @@ function App() {
     if (window.location.pathname !== nextPath) {
       window.history.pushState(null, '', `${nextPath}${window.location.search}`);
     }
+    trackEvent('project_open', { project_id: projectId });
     setActiveProject(projectId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);

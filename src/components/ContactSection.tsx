@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n';
+import { trackContactClick, trackLeadGenerated } from '../lib/analytics';
 
 const WHATSAPP_NUMBER = '593986059727';
 const CONTACT_EMAIL = 'info@amephia.com';
@@ -84,6 +85,7 @@ export const ContactSection = () => {
       }
 
       setIsSuccess(true);
+      trackLeadGenerated('form', 'contact_form');
       setFormData({ name: '', email: '', phone: '', message: '' });
       setTimeout(() => setIsSuccess(false), 3500);
     } catch {
@@ -101,7 +103,14 @@ export const ContactSection = () => {
     }));
   };
 
-  const openWhatsApp = () => {
+  const trackEmailLead = (context: string) => {
+    trackContactClick('email', context);
+    trackLeadGenerated('email', context);
+  };
+
+  const openWhatsApp = (context = 'contact_whatsapp') => {
+    trackContactClick('whatsapp', context);
+    trackLeadGenerated('whatsapp', context);
     const message = encodeURIComponent('Hola! Me interesa obtener más información sobre sus soluciones de software.');
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
   };
@@ -152,7 +161,7 @@ export const ContactSection = () => {
                     {t('contactWhatsappDesc')}
                   </p>
                   <button
-                    onClick={openWhatsApp}
+                    onClick={() => openWhatsApp('contact_whatsapp_card')}
                     className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-medium rounded-lg transition-colors"
                   >
                     <WhatsAppIcon />
@@ -186,7 +195,13 @@ export const ContactSection = () => {
               </div>
               <div>
                 <p className="text-xs text-mutedText uppercase tracking-wider">Email</p>
-                <p className="text-white font-medium">info@amephia.com</p>
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  onClick={() => trackEmailLead('contact_quick_info')}
+                  className="text-white font-medium hover:text-primary transition-colors"
+                >
+                  {CONTACT_EMAIL}
+                </a>
               </div>
             </div>
           </motion.div>
@@ -324,13 +339,14 @@ export const ContactSection = () => {
                 <div className="flex items-center justify-center gap-3">
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
+                    onClick={() => trackEmailLead('contact_error_fallback')}
                     className="px-4 py-2 border border-white/20 rounded-lg hover:bg-white/5 transition-colors"
                   >
                     {t('contactEmailNow')}
                   </a>
                   <button
                     type="button"
-                    onClick={openWhatsApp}
+                    onClick={() => openWhatsApp('contact_error_fallback')}
                     className="px-4 py-2 border border-green-500/40 text-green-300 rounded-lg hover:bg-green-500/10 transition-colors"
                   >
                     WhatsApp
