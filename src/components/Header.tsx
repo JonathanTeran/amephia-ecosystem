@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n';
 
-import logo from '../assets/images/amelogo_v2.png';
+import logo from '../assets/images/amelogo_v3.png';
 
 const LanguageSelector: React.FC = () => {
     const { language, setLanguage } = useLanguage();
@@ -12,8 +12,8 @@ const LanguageSelector: React.FC = () => {
             <button
                 onClick={() => setLanguage('en')}
                 className={`px-2 py-1 rounded transition-colors ${language === 'en'
-                        ? 'bg-primary/20 text-primary'
-                        : 'text-mutedText hover:text-white'
+                    ? 'bg-primary/20 text-primary'
+                    : 'text-mutedText hover:text-white'
                     }`}
             >
                 EN
@@ -22,8 +22,8 @@ const LanguageSelector: React.FC = () => {
             <button
                 onClick={() => setLanguage('es')}
                 className={`px-2 py-1 rounded transition-colors ${language === 'es'
-                        ? 'bg-primary/20 text-primary'
-                        : 'text-mutedText hover:text-white'
+                    ? 'bg-primary/20 text-primary'
+                    : 'text-mutedText hover:text-white'
                     }`}
             >
                 ES
