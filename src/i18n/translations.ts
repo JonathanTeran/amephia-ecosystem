@@ -44,6 +44,24 @@ export const translations = {
     learnMore: 'Learn More',
     contactUs: 'Contact Us',
     requestDemo: 'Request Demo',
+
+    // Contact Section
+    contactTitle: 'Get In Touch',
+    contactSubtitle: 'Ready to transform your business? Contact us today',
+    contactDesc: 'Our team is ready to help you implement the perfect solution for your gym or fitness center. Get in touch with us through any of the following channels.',
+    contactName: 'Full Name',
+    contactEmail: 'Email Address',
+    contactPhone: 'Phone Number',
+    contactMessage: 'Message',
+    contactSend: 'Send Message',
+    contactWhatsapp: 'Chat on WhatsApp',
+    contactWhatsappDesc: 'Get instant support through WhatsApp. We typically respond within minutes.',
+    contactFormDesc: 'Fill out the form and we\'ll get back to you within 24 hours.',
+    contactSuccess: 'Message sent successfully!',
+    contactNamePlaceholder: 'John Doe',
+    contactEmailPlaceholder: 'john@example.com',
+    contactPhonePlaceholder: '+1 234 567 8900',
+    contactMessagePlaceholder: 'Tell us about your project or ask any questions...',
   },
   es: {
     // Header
@@ -90,6 +108,24 @@ export const translations = {
     learnMore: 'Más Información',
     contactUs: 'Contáctanos',
     requestDemo: 'Solicitar Demo',
+
+    // Contact Section
+    contactTitle: 'Contáctanos',
+    contactSubtitle: '¿Listo para transformar tu negocio? Contáctanos hoy',
+    contactDesc: 'Nuestro equipo está listo para ayudarte a implementar la solución perfecta para tu gimnasio o centro fitness. Comunícate con nosotros a través de cualquiera de los siguientes canales.',
+    contactName: 'Nombre Completo',
+    contactEmail: 'Correo Electrónico',
+    contactPhone: 'Número de Teléfono',
+    contactMessage: 'Mensaje',
+    contactSend: 'Enviar Mensaje',
+    contactWhatsapp: 'Chatea por WhatsApp',
+    contactWhatsappDesc: 'Obtén soporte instantáneo a través de WhatsApp. Normalmente respondemos en minutos.',
+    contactFormDesc: 'Completa el formulario y te responderemos en 24 horas.',
+    contactSuccess: '¡Mensaje enviado exitosamente!',
+    contactNamePlaceholder: 'Juan Pérez',
+    contactEmailPlaceholder: 'juan@ejemplo.com',
+    contactPhonePlaceholder: '+593 99 123 4567',
+    contactMessagePlaceholder: 'Cuéntanos sobre tu proyecto o haz cualquier pregunta...',
   }
 } as const;
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n';
 
-import logo from '../assets/images/amelogo.png';
+import logo from '../assets/images/amelogo_v2.png';
 
 const LanguageSelector: React.FC = () => {
     const { language, setLanguage } = useLanguage();
@@ -11,22 +11,20 @@ const LanguageSelector: React.FC = () => {
         <div className="flex items-center gap-2 font-mono text-xs">
             <button
                 onClick={() => setLanguage('en')}
-                className={`px-2 py-1 rounded transition-colors ${
-                    language === 'en'
+                className={`px-2 py-1 rounded transition-colors ${language === 'en'
                         ? 'bg-primary/20 text-primary'
                         : 'text-mutedText hover:text-white'
-                }`}
+                    }`}
             >
                 EN
             </button>
             <span className="text-white/20">|</span>
             <button
                 onClick={() => setLanguage('es')}
-                className={`px-2 py-1 rounded transition-colors ${
-                    language === 'es'
+                className={`px-2 py-1 rounded transition-colors ${language === 'es'
                         ? 'bg-primary/20 text-primary'
                         : 'text-mutedText hover:text-white'
-                }`}
+                    }`}
             >
                 ES
             </button>
@@ -59,9 +57,13 @@ export const Header: React.FC = () => {
                 >
                     <img
                         src={logo}
-                        alt="AmePhia Ecosystem"
-                        className="w-full max-w-[400px] h-auto object-contain"
+                        alt="AmePhia Logo"
+                        className="w-32 h-auto object-contain mb-6 opacity-90"
                     />
+                    <h1 className="text-7xl md:text-9xl font-bold leading-[0.8] tracking-tighter text-white">
+                        ECOSYSTEM <br />
+                        <span className="text-white/20">AMEPHIA</span>
+                    </h1>
                 </motion.div>
                 <div className="mt-8 flex items-center space-x-4">
                     <div className="h-[1px] w-12 bg-white/20"></div>

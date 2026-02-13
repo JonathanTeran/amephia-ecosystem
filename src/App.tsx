@@ -7,6 +7,7 @@ import { SatelliteModule } from './components/modules/SatelliteModule';
 
 import { InfoSection } from './components/InfoSection';
 import { GymErpSection } from './components/GymErpSection';
+import { ContactSection } from './components/ContactSection';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
       <GymErpSection />
 
       <InfoSection />
+
+      <ContactSection />
 
       {/* Footer / Copyright */}
       <footer className="mt-24 border-t border-white/5 pt-8 flex justify-between items-center text-[10px] text-mutedText/40 font-mono tracking-widest uppercase">
