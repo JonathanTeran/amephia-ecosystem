@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -29,20 +31,26 @@ jobs:
         run: npm run build
 
       - name: Publish dist to deploy branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          rm -rf .deploy
-          mkdir .deploy
-          cp -R dist/. .deploy/
-          cd .deploy
+          git fetch origin deploy --depth=1 || true
+          rm -rf .deploy-worktree
 
-          git init
-          git checkout -b deploy
+          if git ls-remote --exit-code --heads origin deploy >/dev/null 2>&1; then
+            git worktree add -B deploy .deploy-worktree origin/deploy
+          else
+            git worktree add -b deploy .deploy-worktree
+          fi
+
+          rsync -a --delete --exclude '.git' dist/ .deploy-worktree/
+          cd .deploy-worktree
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to deploy branch."
+            exit 0
+          fi
           git commit -m "Deploy ${GITHUB_SHA}"
-          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git push --force origin deploy
+          git push origin deploy
