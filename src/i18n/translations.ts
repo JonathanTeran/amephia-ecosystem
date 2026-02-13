@@ -5,7 +5,7 @@ export const translations = {
 
     // Info Section
     whoWeAre: 'Who We Are',
-    whoWeAreDesc: 'We are a forward-thinking technology company dedicated to building robust and scalable ecosystems. Our team combines deep industry knowledge with cutting-edge technical expertise to deliver solutions that drive real business value.',
+    whoWeAreDesc: 'We are a forward-thinking technology company dedicated to building robust and scalable ecosystems. Our team combines deep industry knowledge with cutting-edge technical expertise to deliver solutions that drive real business value. We also develop mobile apps for both Android and Apple platforms, and we have built web systems and equipment repair tracking apps with progress bars and real-time communication for clients. We also help startups design, build, and scale their digital products.',
     mission: 'Mission',
     missionDesc: 'To empower businesses with intelligent, scalable, and user-centric software solutions that streamline operations and unlock new opportunities for growth.',
     vision: 'Vision',
@@ -65,7 +65,7 @@ export const translations = {
 
     // Stats Section
     statsTitle: 'Numbers That Speak',
-    statsSubtitle: 'Trusted by fitness businesses across Latin America',
+    statsSubtitle: 'Trusted by businesses across Latin America and by clients in the U.S., with solutions for any industry',
     statsGyms: 'Active Gyms',
     statsMembers: 'Members Managed',
     statsTransactions: 'Monthly Transactions',
@@ -101,7 +101,7 @@ export const translations = {
 
     // Info Section
     whoWeAre: 'Quiénes Somos',
-    whoWeAreDesc: 'Somos una empresa de tecnología con visión de futuro dedicada a construir ecosistemas robustos y escalables. Nuestro equipo combina un profundo conocimiento de la industria con experiencia técnica de vanguardia para entregar soluciones que generan valor real para los negocios.',
+    whoWeAreDesc: 'Somos una empresa de tecnología con visión de futuro dedicada a construir ecosistemas robustos y escalables. Nuestro equipo combina un profundo conocimiento de la industria con experiencia técnica de vanguardia para entregar soluciones que generan valor real para los negocios. También desarrollamos apps móviles para ambas plataformas: Android y Apple (iOS), y hemos realizado sistemas web y apps de tracking de reparaciones de equipos con barras de progreso y comunicación en tiempo real para el cliente. Además, ayudamos a startups a diseñar, construir y escalar sus productos digitales.',
     mission: 'Misión',
     missionDesc: 'Empoderar a las empresas con soluciones de software inteligentes, escalables y centradas en el usuario que optimicen las operaciones y desbloqueen nuevas oportunidades de crecimiento.',
     vision: 'Visión',
@@ -161,7 +161,7 @@ export const translations = {
 
     // Stats Section
     statsTitle: 'Números que Hablan',
-    statsSubtitle: 'La confianza de negocios fitness en toda Latinoamérica',
+    statsSubtitle: 'La confianza de negocios en toda Latinoamérica y de clientes en EE. UU., con soluciones para cualquier industria',
     statsGyms: 'Gimnasios Activos',
     statsMembers: 'Miembros Gestionados',
     statsTransactions: 'Transacciones Mensuales',

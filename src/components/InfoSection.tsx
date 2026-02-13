@@ -2,10 +2,12 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n';
 
 const technologies = {
-  Frontend: ['React', 'Angular', 'Astro'],
-  Backend: ['Laravel', 'N8N'],
-  Database: ['MySQL', 'SQL Server', 'PostgreSQL'],
-  AI: ['OpenAI', 'Claude', 'Gemini'],
+  Frontend: ['React', 'Next.js', 'Angular', 'Astro', 'TypeScript', 'Tailwind CSS', 'Vite'],
+  Backend: ['Laravel', 'Node.js', 'Express', 'NestJS', 'Python', 'N8N', 'REST APIs'],
+  Mobile: ['Flutter', 'React Native', 'Android (Kotlin)', 'iOS (Swift)'],
+  Database: ['MySQL', 'SQL Server', 'PostgreSQL', 'MongoDB', 'Redis'],
+  Cloud: ['Docker', 'GitHub Actions', 'Linux', 'Nginx', 'AWS', 'Google Cloud'],
+  AI: ['OpenAI', 'Claude', 'Gemini', 'LangChain', 'RAG Systems'],
 };
 
 const SectionHeader = ({ children }: { children: React.ReactNode }) => (

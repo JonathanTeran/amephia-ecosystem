@@ -7,6 +7,8 @@ import { SatelliteModule } from './components/modules/SatelliteModule';
 
 import { InfoSection } from './components/InfoSection';
 import { GymErpSection } from './components/GymErpSection';
+import { StatsSection } from './components/StatsSection';
+import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
 
 function App() {
@@ -22,7 +24,11 @@ function App() {
 
       <GymErpSection />
 
+      <StatsSection />
+
       <InfoSection />
+
+      <FaqSection />
 
       <ContactSection />
 
