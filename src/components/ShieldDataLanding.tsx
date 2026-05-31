@@ -222,8 +222,9 @@ const ShieldDataLanding = () => {
 
             <p className="mx-auto mt-7 max-w-2xl text-lg sm:text-xl text-slate-600 leading-relaxed">
               La primera plataforma enterprise construida nativamente para la Ley de Protección
-              de Datos del Ecuador. RAT generado con IA, brechas notificadas a SPDP en
-              menos de 72h, portal ARCO público y modo inspección con expediente firmado PAdES —
+              de Datos del Ecuador. RAT generado con IA, brechas notificadas a SPDP en menos
+              de 72h, portal ARCO público, generación e importación de documentos con IA y
+              firma electrónica PAdES con tu certificado ARCOTEL —
               <span className="text-[#0F172A] font-medium"> listo desde el día uno</span>.
             </p>
 
@@ -341,7 +342,7 @@ const ShieldDataLanding = () => {
               Killer features
             </span>
             <h2 className="mt-5 text-4xl sm:text-5xl font-bold tracking-tight text-[#0F172A]">
-              Cinco diferenciadores que{' '}
+              Siete diferenciadores que{' '}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#1E40AF] to-[#8B5CF6]">
                 justifican la decisión
               </span>
@@ -418,6 +419,24 @@ const ShieldDataLanding = () => {
               accent="amber"
               title="Postura de Ciberseguridad NIST CSF"
               desc="Evaluación de 20 controles ISO 27001 / NIST CSF, scoring por dominio, brechas priorizadas y roadmap GAP exportable a directorio."
+            />
+
+            {/* Feature 6 — Firma electrónica SIGN */}
+            <FeatureCard
+              kf="KF #6"
+              icon={<KeyRound className="h-5 w-5 text-indigo-600" />}
+              accent="indigo"
+              title="Firma electrónica con validez legal"
+              desc="Firma tus PDF con tu certificado ARCOTEL (.p12 de BCE, Security Data, ANF) directo en el navegador — la clave nunca sale de tu equipo. PAdES-B/T/LTV con sello de tiempo y portal público de verificación con semáforo de validez (Ley 67)."
+            />
+
+            {/* Feature 7 — Document Intelligence */}
+            <FeatureCard
+              kf="KF #7"
+              icon={<FileCheck className="h-5 w-5 text-sky-600" />}
+              accent="sky"
+              title="Document Intelligence con IA"
+              desc="Genera avisos de privacidad, contratos de encargo (DPA), respuestas ARCO y borradores de EIPD con citas a la LOPDP. O importa documentos existentes (PDF/Word, con OCR de escaneados): extrae datos, analiza brechas y regenera una versión conforme."
             />
           </div>
         </div>

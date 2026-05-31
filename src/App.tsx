@@ -5,6 +5,7 @@ import GymLanding from './components/GymLanding';
 import BrokerSeguroLanding from './components/BrokerSeguroLanding';
 import EcommerceLanding from './components/EcommerceLanding';
 import ShieldDataLanding from './components/ShieldDataLanding';
+import EducationLanding from './components/EducationLanding';
 import { CompanyLanding } from './components/CompanyLanding';
 import { isProjectId } from './projects';
 import type { ProjectId } from './projects';
@@ -86,10 +87,18 @@ const PROJECT_META: Record<ProjectId, ProjectSEO> = {
   shielddata: {
     title: 'SHIELDDATA — Cumplimiento LOPDP Ecuador con IA | Plataforma Enterprise de Protección de Datos',
     description:
-      'SHIELDDATA: plataforma enterprise de cumplimiento de la Ley de Protección de Datos del Ecuador. RAT generado con IA, EIPD, derechos ARCO, notificación de brechas a SPDP en <72h, modo inspección con expediente firmado PAdES y postura de ciberseguridad ISO 27001/NIST CSF. Demo gratis sin tarjeta.',
+      'SHIELDDATA: plataforma enterprise de cumplimiento de la Ley de Protección de Datos del Ecuador. RAT generado con IA, EIPD, derechos ARCO, notificación de brechas a SPDP en <72h, modo inspección con expediente firmado PAdES, firma electrónica ARCOTEL (PAdES-LTV) y Document Intelligence con IA para generar e importar documentos legales. Demo gratis sin tarjeta.',
     keywords:
-      'LOPDP Ecuador, cumplimiento protección de datos Ecuador, SPDP, RAT registro de tratamientos, EIPD evaluación de impacto, derechos ARCO, brechas datos personales, DPO Ecuador, software protección de datos, OneTrust Ecuador, software compliance LOPDP, plataforma cumplimiento SPDP, modo inspección SPDP, ciberseguridad ISO 27001 Ecuador',
+      'LOPDP Ecuador, cumplimiento protección de datos Ecuador, SPDP, RAT registro de tratamientos, EIPD evaluación de impacto, derechos ARCO, brechas datos personales, DPO Ecuador, software protección de datos, OneTrust Ecuador, software compliance LOPDP, plataforma cumplimiento SPDP, modo inspección SPDP, ciberseguridad ISO 27001 Ecuador, firma electrónica ARCOTEL, firma PAdES Ecuador, generador de documentos LOPDP con IA',
     ogImage: '/assets/screenshots/shielddata-dashboard.png',
+  },
+  education: {
+    title: 'AmePhia EDU — Sistema escolar MinEduc 2025 con LOEI y LMS nativo | SIS Ecuador',
+    description:
+      'AmePhia EDU: sistema académico todo-en-uno para instituciones educativas en Ecuador. Cumple Tabla 9 MinEduc 2025 (PI + Examen), LOEI completo (refuerzo, supletorio, mejoramiento), DCE psicopedagógico, conciliación bancaria (Pichincha, Guayaquil, Pacífico), aula virtual LMS, portal del padre PWA, libreta con QR de verificación pública. LOPDP por diseño. Desde $99/mes.',
+    keywords:
+      'sistema escolar Ecuador, software gestión educativa, SIS Ecuador, MinEduc Tabla 9 2025, LOEI, libreta ministerial, aula virtual LMS Ecuador, conciliación bancaria escolar Pichincha Guayaquil, portal padres PWA, DCE psicopedagógico, refuerzo mejoramiento LOEI, software colegio Ecuador, sistema notas Ecuador, ERP escolar, software fiscomisional, registro acumulativo DCE',
+    ogImage: '/assets/screenshots/amephia-edu-dashboard.png',
   },
 };
 
@@ -299,7 +308,7 @@ function App() {
         countryOfOrigin: 'EC',
         inLanguage: 'es-EC',
         featureList:
-          'Registro de Actividades de Tratamiento (RAT) generado con IA, Evaluación de Impacto a la Protección de Datos (EIPD), Derechos ARCO con portal público, Notificación de brechas a SPDP en menos de 72h, Modo Inspección con expediente firmado PAdES, Postura de Ciberseguridad ISO 27001 / NIST CSF, Designación y gestión del DPO, Consentimientos digitales con evidencia, Transferencias internacionales de datos, Contratos de encargo (DPA), Audit log con hash chain Merkle, Multi-tenant con Row-Level Security, Firma electrónica ARCOTEL (PAdES/XAdES/CAdES), Playbooks sectoriales (Salud, Fintech, Retail, Educación, Sector Público), Soporte opcional GDPR y HIPAA',
+          'Registro de Actividades de Tratamiento (RAT) generado con IA, Evaluación de Impacto a la Protección de Datos (EIPD), Derechos ARCO con portal público, Notificación de brechas a SPDP en menos de 72h, Modo Inspección con expediente firmado PAdES, Postura de Ciberseguridad ISO 27001 / NIST CSF, Designación y gestión del DPO, Consentimientos digitales con evidencia, Transferencias internacionales de datos, Contratos de encargo (DPA), Audit log con hash chain Merkle, Multi-tenant con Row-Level Security, Firma electrónica ARCOTEL en el navegador (PAdES-B/T/LTV con sello de tiempo y verificación pública), Document Intelligence con IA (generación e importación de documentos legales con OCR), Playbooks sectoriales (Salud, Fintech, Retail, Educación, Sector Público), Soporte opcional GDPR y HIPAA',
       };
       if (existingLd) {
         existingLd.textContent = JSON.stringify(ld);
@@ -352,6 +361,10 @@ function App() {
 
   if (activeProject === 'shielddata') {
     return <ShieldDataLanding />;
+  }
+
+  if (activeProject === 'education') {
+    return <EducationLanding />;
   }
 
   if (activeProject) {

@@ -23,7 +23,10 @@ interface ProjectCopy {
   deliverables: string[];
 }
 
-const PROJECT_COPY: Record<Language, Record<ProjectId, ProjectCopy>> = {
+// `shielddata` y `education` tienen su propio componente de landing y se rutean
+// aparte en App.tsx — nunca pasan por ProjectLanding —, por eso su copy genérico
+// es opcional aquí. El acceso `copy[projectId]` ya tiene guard `if (!proj) return null`.
+const PROJECT_COPY: Record<Language, Partial<Record<ProjectId, ProjectCopy>>> = {
   en: {
     gym: {
       badge: 'Project Landing',
