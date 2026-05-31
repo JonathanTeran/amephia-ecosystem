@@ -1083,7 +1083,7 @@ const FeatureCard = ({
 }: {
   kf: string;
   icon: React.ReactNode;
-  accent: 'orange' | 'violet' | 'emerald' | 'amber';
+  accent: 'orange' | 'violet' | 'emerald' | 'amber' | 'indigo' | 'sky';
   title: string;
   desc: string;
 }) => {
@@ -1092,12 +1092,16 @@ const FeatureCard = ({
     violet: 'border-violet-200 bg-violet-50 group-hover:border-violet-300',
     emerald: 'border-emerald-200 bg-emerald-50 group-hover:border-emerald-300',
     amber: 'border-amber-200 bg-amber-50 group-hover:border-amber-300',
+    indigo: 'border-indigo-200 bg-indigo-50 group-hover:border-indigo-300',
+    sky: 'border-sky-200 bg-sky-50 group-hover:border-sky-300',
   };
   const labelColorMap = {
     orange: 'text-orange-600',
     violet: 'text-violet-600',
     emerald: 'text-emerald-600',
     amber: 'text-amber-600',
+    indigo: 'text-indigo-600',
+    sky: 'text-sky-600',
   };
   return (
     <div className="group rounded-2xl border border-slate-200 bg-white p-6 hover:border-slate-300 hover:shadow-lg transition shadow-sm relative overflow-hidden">

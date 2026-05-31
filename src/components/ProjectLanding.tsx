@@ -461,6 +461,9 @@ const PROJECT_COPY: Record<Language, Partial<Record<ProjectId, ProjectCopy>>> = 
 export const ProjectLanding = ({ projectId, onBack }: ProjectLandingProps) => {
   const { language } = useLanguage();
   const copy = PROJECT_COPY[language][projectId];
+  // `shielddata` y `education` se renderizan con su propio componente (App.tsx),
+  // así que aquí su copy genérico no existe → guard defensivo.
+  if (!copy) return null;
   const whatsappNumber = '593986059727';
   const packagistUrl = 'https://packagist.org/packages/amephia/sri-ec';
 
